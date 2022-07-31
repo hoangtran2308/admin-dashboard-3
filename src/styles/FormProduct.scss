@@ -1,0 +1,142 @@
+@import 'variables';
+
+
+.main-form-product {
+  padding: 12px 0 4%;
+
+  .title {
+    padding-left: 4%;
+    display: flex; 
+    align-items: center;
+    gap: 8px;
+    
+    & > p {
+      text-transform: capitalize;
+    }
+    
+    & > p:first-child {
+      font-size: 28px;
+      font-weight: 500;
+      }
+    
+    & > p:last-child {
+      font-size: 24px;
+      font-weight: 500;
+      color: #023e8a;
+    }
+  }
+
+  .container {
+    padding: 40px 0 0 0;
+
+
+
+    .section {
+        width: 80%;
+        padding: 12px 0;
+        display: flex;
+        justify-content: center;
+    
+        &>div {
+          width: 100%;
+          max-width: 440px;
+
+          &:first-child {
+            display: flex;
+            width: 120px;
+            margin-right: 12px;
+            justify-content: flex-end;
+            align-self: flex-start;
+            padding-top: 4px;
+          }
+    
+          input {
+            width: 100%;
+            padding: 6px 12px;
+
+              &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                  margin: 0;
+                }
+            
+              &[type=number] {
+                -moz-appearance: textfield;
+              }
+          }
+        }
+
+        &.description {
+          textarea {
+            width: 100%;
+            padding: 12px;
+            max-width: 440px;
+            height: 40px;
+            min-height: 40px;
+            border-radius: 4px;
+            border-color: #ccc;
+            font-size: 17px;
+
+            &:hover {
+              border-color: #000;
+            }
+
+            &:focus {
+            outline: 1px solid #2683c2;
+            }
+          }
+        }
+
+        &.thumbnailUrl {
+
+          .box-image {
+              margin-top: 20px;
+              display: flex;
+              gap: 20px;
+
+                button {
+                  @extend %buttonShared
+                }
+
+                .buttonPreview {
+                  width: 140px;
+                  height: 32px;
+                  font-size: 12px;
+                  font-weight: 500;
+                  color: #fff;
+                  background: #118ab2;
+                }
+                
+                img {
+                  width: 200px;
+                  height: 200px;
+                  object-fit: fill;
+                  object-position: center
+                }
+            }
+          }
+       }
+
+    .boxButton {
+      display: flex;
+      justify-content: center;
+      gap: clamp(20px, 20%, 120px);
+      padding: 20px 0 0;
+
+        button {
+          @extend %buttonShared
+        }
+
+        .addButton {
+          color: #fff;
+          background-color: #3f51b5;
+        }
+
+        .resetButton {
+          background: red;
+          color: #fff;
+        }
+    }
+  }
+  
+}
